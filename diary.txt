@@ -1,0 +1,39 @@
+date:w
+wheather:w
+mood:w
+theme:w
+0 w
+1 w
+end_of_diary
+date:e
+wheather:e
+mood:e
+theme:e
+0 e
+1 e
+2 e
+end_of_diary
+date:a
+wheather:aa
+mood:a
+theme:a
+0 a
+1 a
+2 a
+end_of_diary
+date:s
+wheather:s
+mood:s
+theme:s
+0 s
+1 s
+2 s
+3 s
+end_of_diary
+date:q
+wheather:q
+mood:q
+theme:q
+0 q
+1 q
+end_of_diary
