@@ -1,16 +1,35 @@
-# Failure is probably the fortification in your pole
-# It is like a peek your wallet as the thief when you
-# are thinking how to spend several hard-won lepta
-# when you Are wondering whether new money it has laid
-# background Because of you, then at the heart of the
-# most lax alert and most low awareness and left it
-# godsend failed
+import collections
+import re
+topic_cnt = {}
+hot_cnt = collections.OrderedDict()
+pattern1 = re.compile(r"#.+#")
 
-ls=[]
-with open("./pta.py",'r') as f:
-    while(s:=f.readline()):
-        if s[0]=='#':
-            ls.extend(s[2:].split())
+for i in range(int(input())):
+    ls = pattern1.findall(input())
+    s = ''
+    for i in ls:
+        s = i.replace('!', '').replace('.', '').capitalize()
 
-print(ls)
-print(ls.__len__())
+    sr = s.replace('#', '')
+    topic_cnt[sr] = topic_cnt.get(sr, 0)+1
+    ss = s.split("#")
+    for i in ss:
+        if i != '' and i != ' ':
+            hot_cnt[i] = hot_cnt.get(i, 0)+1
+max = 0
+name = ''
+hot_cnt = sorted(hot_cnt.items(), key=lambda d: d[0], reverse=False)
+print(hot_cnt)
+for i, j in hot_cnt:
+    if j > max:
+        name = i
+        max = j
+print(name.capitalize())
+
+pattern2 = re.compile(f"{name}")
+for i in topic_cnt:
+    if pattern2.findall(i):
+        print(topic_cnt[i])
+        break
+
+print(f"And {len(hot_cnt)-1} more ...")
